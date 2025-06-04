@@ -1,0 +1,37 @@
+ body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+}
+
+.navbar {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.services,
+.portfolio,
+.clients,
+.footer {
+  padding: 2rem;
+}
+
+.footer {
+  background-color: #264653;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+  }}
