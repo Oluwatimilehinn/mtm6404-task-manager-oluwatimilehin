@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #111827;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #1f2937;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav h1 {
+  font-size: 1.75rem;
+}
+
+main {
+  padding: 1.5rem 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.task-item {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item span:first-child {
+  font-weight: 500;
+  font-size: 1rem;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+button {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button.completed {
+  background-color: #10b981;
+}
+
+button.completed:hover {
+  background-color: #059669;
+}
+
+footer {
+  background-color: #f1f5f9;
+  color: #6b7280;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+@media (max-width: 480px) {
+  #root {
+    margin: 1rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
