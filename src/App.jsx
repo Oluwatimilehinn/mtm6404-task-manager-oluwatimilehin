@@ -1,18 +1,27 @@
-import NavBar from './components/NavBar';
-import TaskList from './components/TaskList';
-import Footer from './components/Footer';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import TaskListPage from './pages/TaskListPage.jsx';
+import NavBar from './components/NavBar.jsx';
+import Footer from './components/Footer.jsx';
+import { TaskProvider } from './context/TaskContext.jsx';
 
-export default function App() {
+function App() {
   return (
-    <div id="root">
-      <NavBar>
-        <h1>Task Manager</h1>
-      </NavBar>
-      <main>
-        <TaskList />
-      </main>
-      <Footer />
-    </div>
+    <TaskProvider>
+      <div className="app-container">
+        <NavBar />
+
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/list/:id" element={<TaskListPage />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </TaskProvider>
   );
 }
+
+export default App;

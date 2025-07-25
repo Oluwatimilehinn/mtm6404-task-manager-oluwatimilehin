@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,22 +11,34 @@ body {
   color: #111827;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem 1rem;
-}
-
-#root {
-  width: 100%;
-  max-width: 600px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
   flex-direction: column;
 }
 
+/* Layout Root */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Navigation */
 nav {
   background-color: #1f2937;
   color: white;
@@ -37,79 +50,22 @@ nav h1 {
   font-size: 1.75rem;
 }
 
-main {
-  padding: 1.5rem 2rem;
-}
-
-h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.task-item {
-  background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.task-item span:first-child {
-  font-weight: 500;
-  font-size: 1rem;
-  max-width: 70%;
-  word-wrap: break-word;
-}
-
-button {
-  background-color: #3b82f6;
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #2563eb;
-}
-
-button.completed {
-  background-color: #10b981;
-}
-
-button.completed:hover {
-  background-color: #059669;
-}
-
+/* Footer */
 footer {
   background-color: #f1f5f9;
   color: #6b7280;
   text-align: center;
   padding: 1rem;
   font-size: 0.875rem;
-  margin-top: auto;
 }
 
-@media (max-width: 480px) {
-  #root {
-    margin: 1rem;
-  }
-
-  .task-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  button {
-    width: 100%;
-  }
+/* Heading */
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
+
+/* Task Form */
 .task-form {
   display: flex;
   flex-wrap: wrap;
@@ -123,21 +79,24 @@ footer {
   border-radius: 6px;
   border: 1px solid #ccc;
   flex: 1;
+  min-width: 140px;
 }
 
 .task-form button {
   padding: 0.5rem 1rem;
-  border-radius: 6px;
   background-color: #10b981;
-  color: #fff;
+  color: white;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .task-form button:hover {
   background-color: #059669;
 }
 
+/* Task Item Card */
 .task-item {
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -154,6 +113,7 @@ footer {
   text-decoration: line-through;
 }
 
+/* Action Buttons */
 .actions {
   display: flex;
   gap: 0.5rem;
@@ -163,22 +123,191 @@ button.completed {
   background-color: #3b82f6;
 }
 
+button.completed:hover {
+  background-color: #2563eb;
+}
+
 button.delete {
   background-color: #ef4444;
-  color: white;
 }
 
 button.delete:hover {
   background-color: #dc2626;
 }
 
+/* Toggle Row */
 .toggle-row {
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  justify-content: flex-start;
 }
+
+/* List Form */
+.list-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-form input {
+  padding: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.list-form button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.list-form button:hover {
+  background-color: #2563eb;
+}
+
+/* List Item Group */
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.list-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  flex: 1;
+}
+
+.list-link:hover {
+  text-decoration: underline;
+}
+
+.delete-list-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+/* Card Wrapper */
 .card-wrapper {
-  background-color: #1f1f1f;
+  background-color: #ffffff;
   padding: 1rem;
-  margin: 1rem 0;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+/* Task List Page */
+.tasklist-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tasklist-page h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .task-form,
+  .list-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-form input,
+  .task-form select,
+  .task-form button,
+  .list-form input,
+  .list-form button {
+    width: 100%;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-list-btn {
+    align-self: flex-end;
+  }
+}
+.navbar {
+  background-color: #1f2937;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.navbar-title a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links a {
+  margin-left: 1rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
 }
